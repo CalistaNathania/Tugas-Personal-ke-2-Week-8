@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <string.h>
+
+// Contoh penggunaan Struct
+struct Mahasiswa {
+    char nama[50];
+    int umur;
+    float ipk;
+};
+
+// Contoh penggunaan Union
+union Data {
+    int angka;
+    float desimal;
+    char karakter;
+};
+
+int main() {
+    // Contoh penggunaan Struct
+    struct Mahasiswa mhs1;
+    strcpy(mhs1.nama, "Calista Nathania");
+    mhs1.umur = 19;
+    mhs1.ipk = 3.95;
+
+    printf("Data Mahasiswa:\n");
+    printf("Nama: %s\n", mhs1.nama);
+    printf("Umur: %d\n", mhs1.umur);
+    printf("IPK: %.2f\n", mhs1.ipk);
+
+    // Contoh penggunaan Union
+    union Data data1;
+    data1.angka = 78;
+    data1.desimal = 27.3;
+    data1.karakter = 'C';
+
+    printf("\nData Union:\n");
+    printf("Angka: %d\n", data1.angka);
+    printf("Desimal: %.2f\n", data1.desimal);
+    printf("Karakter: %c\n", data1.karakter);
+
+    return 0;
+}
